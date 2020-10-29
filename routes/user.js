@@ -13,21 +13,21 @@ router.get('/', async (req, res) => {
 
 router.post("/signup", async (req, res) => {
     //Validation register
-    const {error} = registerValidation(req.body)
+    const {error} = registerValidation(req.body.user)
     if(error) return res.send(error.details[0].message)
     //Cheking email 
-    const emailExists = await User.findOne({email: req.body.email})
+    const emailExists = await User.findOne({email: req.body.user.email})
     if(emailExists) return res.status(400).send('Email already exists')
     //Hash password 
     const salt = await bcrypt.genSalt(10)
-    const hashPassword = await bcrypt.hash(req.body.password, salt)
+    const hashPassword = await bcrypt.hash(req.body.user.password, salt)
 
     user = new User({
-        name: req.body.name,
-        email: req.body.email,
+        name: req.body.user.name,
+        email: req.body.user.email,
         password: hashPassword,
-        phoneNumber: req.body.phoneNumber,
-        address: req.body.address,
+        phoneNumber: req.body.user.phoneNumber,
+        address: req.body.user.address,
     })
     user.save().then(() => res.json('new user added'))
         .catch((err) => res.status(400).json(err));
