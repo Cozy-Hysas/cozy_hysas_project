@@ -9,7 +9,7 @@ import HouseRenter from "./components/HouseRenter.jsx"
 import Login from "./components/Login.jsx"
 import Signup from "./components/Signup.jsx"
 import Footer from "./components/Footer.jsx"
-
+import HousesList from "./components/HousesList.jsx"
 class Index extends React.Component {
     render() {
         return (
@@ -19,6 +19,7 @@ class Index extends React.Component {
                 <HouseRenter />
                 <Login/>
                 <Signup />
+                <HousesList />
                 <Footer />
             </div>
         )
