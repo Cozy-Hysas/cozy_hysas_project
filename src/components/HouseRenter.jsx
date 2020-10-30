@@ -31,8 +31,8 @@ class HouseRenter extends React.Component {
 	}
 	handleEventOnClick(e) {
 		e.preventDefault();
-		console.log(this.state);
 		this.props.addHouse(this.state);
+		//console.log(this.state);
 		/* var newHouse = {
 			title: this.state.title,
 			imageUrl: this.state.imageUrl,
