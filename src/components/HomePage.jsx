@@ -1,25 +1,51 @@
 import React from 'react';
-import {MDBInputGroup , MDBContainer} from "mdbreact";
+import { MDBContainer, MDBInput }from "mdbreact";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        data: [],
+        view: 'HomePage',
+        chosenAddress: {},
+        pickupDate: 0,
+        returnDate: 0,
+        period: 0,
+        Price: 0,
+      
+    }
+    
+    this.handleEventchange = this.handleEventchange.bind(this);
+  
+
+}
+
+
+
+  handleEventchange(e) {
+    var address = e.target.value;
+    var currentAdress = this.state.data.filter(house => house.address === address)
+    this.setState({
+        chosenAddress: currentAdress[0]
+       
+    })
+    console.log(currentAdress)
+}
 
   render() {
+    
     return(
         <>
             <h3>Welcome to Cozy hysas!</h3>
+
             <MDBContainer>
-                <MDBInputGroup containerClassName="mb-3" prepend="@" hint="Username" />
-                <MDBInputGroup containerClassName="mb-3" append="@example.com" hint="Recipient's username" />
-                <MDBInputGroup
-                    label="Your vanity URL"
-                    containerClassName="mb-3"
-                    prepend="https://example.com/users/"
-                    id="basic-url"
-                />
-                <MDBInputGroup containerClassName="mb-3" prepend="$" append=".00" />
-                <MDBInputGroup prepend="With textarea" type="textarea" />
+                <MDBInput label="Address: Where are you going? " outline size="lg" onChange={this.handleEventchange}/>
+                <button className="btn btn-outline-secondary" >Confirm choice</button>    
+              {/*<DatePicker selected={startdate} onChange={date => setStartDate(date)} /> const [startDate, setStartDate] = useState(new Date());*/} 
             </MDBContainer>
         </>
     )
