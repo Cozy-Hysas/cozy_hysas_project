@@ -1,12 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { fetchHouses } from '../redux/actions/houseAction';
+import {connect} from 'react-redux';
+import {fetchHouses} from '../redux/actions/houseAction';
 import PropTypes from 'prop-types';
 
 class HousesList extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+    constructor(props) {
+        super(props);
+    }
 
 	handleClick(event) {
 		console.log(event);
@@ -53,10 +53,8 @@ class HousesList extends React.Component {
 HousesList.propTypes = {
 	fetchHouses: PropTypes.func.isRequired,
 	listOfHouses: PropTypes.object.isRequired,
+
 };
 
-const mapStateToProps = (state) => ({
-	fetchHouses: PropTypes.func.isRequired,
-	listOfHouses: state.house.listOfHouses,
-});
-export default connect(mapStateToProps, { fetchHouses })(HousesList);
+const mapStateToProps = (state) => ({fetchHouses: PropTypes.func.isRequired, listOfHouses: state.house.listOfHouses});
+export default connect(mapStateToProps, {fetchHouses})(HousesList);
