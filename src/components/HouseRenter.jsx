@@ -150,6 +150,6 @@ HouseRenter.propTypes = {
 
 const mapStateToProps = (state) => ({
 	addHouse: PropTypes.func.isRequired,
-	house: state.house,
+	house: state.house.house,
 });
 export default connect(mapStateToProps, { addHouse })(HouseRenter);

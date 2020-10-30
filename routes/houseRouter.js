@@ -19,6 +19,7 @@ router.post('/addHouse', (req, res)=>{
     
     const startDate = req.body.startDate;
     const endDate = req.body.endDate;
+    const feedBack = req.body.feedBack
     
     const newHouse = new House({
         title,
@@ -27,7 +28,8 @@ router.post('/addHouse', (req, res)=>{
         price,
         adress,
         startDate,
-        endDate
+        endDate,
+        feedBack,
     });
     console.log(newHouse)
     newHouse.save()
