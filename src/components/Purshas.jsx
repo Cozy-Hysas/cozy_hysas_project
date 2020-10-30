@@ -39,7 +39,9 @@ class Purshas extends React.Component {
                 <div>
                     <h1>start date : {this.props.startDate} end date : {this.props.endDate}</h1>
 
-
+                    <h6>{this.props.totalPrice}</h6>
+                    <h6>{this.props.totalDays}</h6>
+                    <h6>{this.props.price}</h6>
 
                     <h1>Your information</h1>
 			Use the following form to complete your reservation.<br /><br />
