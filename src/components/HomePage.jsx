@@ -1,25 +1,29 @@
-import React from 'react';
-import {MDBInputGroup , MDBContainer} from "mdbreact";
-
+import React, { useState } from 'react';
+import { MDBContainer, MDBInput }from "mdbreact";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import PropTypes from "prop-types";
 
 
 class HomePage extends React.Component {
 
   render() {
+    const [startDate, setStartDate] = useState(new Date());
     return(
         <>
             <h3>Welcome to Cozy hysas!</h3>
+
+            
+
             <MDBContainer>
-                <MDBInputGroup containerClassName="mb-3" prepend="@" hint="Username" />
-                <MDBInputGroup containerClassName="mb-3" append="@example.com" hint="Recipient's username" />
-                <MDBInputGroup
-                    label="Your vanity URL"
-                    containerClassName="mb-3"
-                    prepend="https://example.com/users/"
-                    id="basic-url"
-                />
-                <MDBInputGroup containerClassName="mb-3" prepend="$" append=".00" />
-                <MDBInputGroup prepend="With textarea" type="textarea" />
+      
+                <MDBInput label="Address: Where are you going? " outline size="lg" />
+                
+                
+                <DatePicker selected={startdate} onChange={date => setStartDate(date)} />
+                
+
+
             </MDBContainer>
         </>
     )
