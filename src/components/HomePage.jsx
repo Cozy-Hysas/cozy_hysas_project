@@ -31,6 +31,7 @@ class HomePage extends React.Component {
     });
   }
 
+
   render() {
     if (this.state.check === "") {
       return (
@@ -63,6 +64,7 @@ class HomePage extends React.Component {
       );
     }
   }
+
 }
 HomePage.propTypes = {
   fetchHouses: PropTypes.func.isRequired,

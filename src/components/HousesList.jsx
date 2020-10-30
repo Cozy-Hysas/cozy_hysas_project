@@ -62,6 +62,7 @@ class HousesList extends React.Component {
       );
     }
   }
+
 }
 
 HousesList.propTypes = {

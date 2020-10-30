@@ -1,3 +1,4 @@
+const mock_data = require('../MOCK_DATA.json');
 const mongoose = require('mongoose');
 const db = require('../database/index.js');
 const houseSchema = new mongoose.Schema(
@@ -32,4 +33,8 @@ const houseSchema = new mongoose.Schema(
 );
 
 const House = mongoose.model('House', houseSchema);
+//House.create(mock_data);
+/* House.remove({}, () => {
+	console.log('all elements deleted');
+}); */
 module.exports = House;
