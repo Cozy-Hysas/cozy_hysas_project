@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchHouses } from '../redux/actions/houseAction';
@@ -13,6 +14,13 @@ class HousesList extends React.Component {
 	}
 	componentDidMount() {
 		this.props.fetchHouses();
+    /*
+       axios.get('/house').then(resp => {
+            this.setState({
+                data: resp.data
+            });
+        });
+    */
 	}
 
 	render() {
@@ -40,6 +48,7 @@ class HousesList extends React.Component {
 			</div>
 		);
 	}
+
 }
 
 HousesList.propTypes = {

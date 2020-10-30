@@ -8,14 +8,16 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const houseRouter = require('./routes/houseRouter');
-const users = require('./routes/user');
-const tenants = require('./routes/tenant');
+app.use(express.static("build"))
 
-app.use(express.static('build'));
-app.use('/House', houseRouter);
-app.use('/users', users);
-app.use('tenants', tenants);
+const houseRouter = require("./routes/houseRouter");
+const users = require("./routes/user");
+const tenants = require("./routes/tenant");
+
+app.use("/house", houseRouter);
+app.use("/users",users);
+app.use("tenants",tenants);
+
 
 const port = 3000;
 
