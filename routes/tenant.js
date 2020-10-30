@@ -35,7 +35,9 @@ router.post("/signup", async (req, res) => {
         email: req.body.email,
         password: hashPassword,
         phoneNumber: req.body.phoneNumber,
-        address: req.body.address
+        address: req.body.address,
+        numeroCart:req.body.numeroCart,
+        cvv2: req.body.cvv2
         })
     tenant.save().then(() => res.json('new tenant added'))
         .catch((err) => res.status(400).json(err));
