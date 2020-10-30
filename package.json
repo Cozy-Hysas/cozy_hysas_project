@@ -1,4 +1,4 @@
-
+{
   "name": "hysas_project",
   "version": "0.1.0",
   "private": true,
@@ -63,5 +63,4 @@
     "jquery": "^3.5.1",
     "react-geocode": "^0.2.2"
   }
-
 }
