@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+//import img from './logImg/CozyHysas1.png'
 
 class Header extends React.Component {
 	render() {
@@ -7,8 +8,8 @@ class Header extends React.Component {
 			<div>
 				<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 					<Navbar.Brand href="#home">
-						<img
-							src="../logImg\CozyHysas.jpg"
+						<img 
+							src="https://cdn1.vectorstock.com/i/1000x1000/89/70/house-with-heart-blue-line-icon-love-home-vector-23308970.jpg" 
 							width="50"
 							height="50"
 							className="d-inline-block align-top"

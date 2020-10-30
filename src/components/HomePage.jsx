@@ -34,6 +34,7 @@ class HomePage extends React.Component {
 		return (
 			<div id="HomePage">
 				<h3 className="Title">Welcome to Cozy hysas!</h3>
+				<center>
 				<MDBContainer>
 					<MDBInput
 						label="Address: Where are you going? "
@@ -49,6 +50,8 @@ class HomePage extends React.Component {
 					</button>
 					{/*<DatePicker selected={startdate} onChange={date => setStartDate(date)} /> const [startDate, setStartDate] = useState(new Date());*/}
 				</MDBContainer>
+				</center>
+				
 			</div>
 		);
 	}
