@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.static("./build"))
 
 const houseRouter = require("./routes/houseRouter");
 const users = require("./routes/user");
@@ -15,9 +15,9 @@ const tenants = require("./routes/tenant");
 
 app.use("/House", houseRouter);
 app.use("/users",users);
-app.use("tenants",tenants);
+app.use("tenant",tenants);
 
-const port = 3000;
+const port = 4000;
 
 app.listen(port, () => {
   console.log(`server listening on port http://localhost:${port}`);

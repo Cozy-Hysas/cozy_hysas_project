@@ -37,7 +37,7 @@ class SignupTenant extends Component {
   signup(event) {
     event.preventDefault();
     axios
-      .post("http://localhost:3000/tenant/signup", {
+      .post("/tenant/signup", {
         name: this.state.name,
         email: this.state.email,
         password: this.state.password,

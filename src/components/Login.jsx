@@ -25,7 +25,7 @@ class Login extends Component {
   
         check(event) {
           event.preventDefault();
-          axios.post("http://localhost:3000/users/login",{email: this.state.email,password: this.state.password})
+          axios.post("/users/login",{email: this.state.email,password: this.state.password})
           .then((res)=> this.setState({check : res.data.message}))
           .catch((err)=> console.log(err,'errrrr'));
         }

@@ -24,7 +24,7 @@ class LoginTenant extends Component {
     }
     check(event) {
         event.preventDefault();
-        axios.post("http://localhost:3000/tenant/login",{email: this.state.email,password: this.state.password})
+        axios.post("/tenant/login",{email: this.state.email,password: this.state.password})
         .then((res)=> this.setState({check : res.data.message}))
         .catch((err)=> console.log(err,'errrrr'));
       }
