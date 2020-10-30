@@ -8,9 +8,9 @@ class HousesList extends React.Component {
 		super(props);
 	}
 
-	handleClick(event) {
-		console.log(event);
-		//alert('this should take me to house component');
+	handleClick(id) {
+		console.log(id);
+		//this.props.selectHouseByID(id);
 	}
 	componentDidMount() {
 		this.props.fetchHouses();
@@ -26,7 +26,7 @@ class HousesList extends React.Component {
 								<div key={house._id}>
 									<div
 										className="houses-list-item-title"
-										onClick={(event) => this.handleClick(event)}
+										onClick={(event) => this.handleClick(house._id)}
 									>
 										{house.title}
 									</div>
@@ -39,7 +39,7 @@ class HousesList extends React.Component {
 									<img
 										src={house.imageUrl}
 										alt=""
-										onClick={(event) => this.handleClick(event)}
+										onClick={(event) => this.handleClick(house._id)}
 										className="houses-list-item-image"
 									/>
 									<span className="houses-list-item-lede">

@@ -1,4 +1,9 @@
-import { ADD_HOUSE, FETCH_HOUSES, FILTER_HOUSES } from '../actions/types';
+import {
+	ADD_HOUSE,
+	FETCH_HOUSES,
+	FILTER_HOUSES,
+	SELECT_HOUSE,
+} from '../actions/types';
 
 const initialState = {
 	house: {
@@ -23,6 +28,9 @@ const houseReducer = function (state = initialState, action) {
 		}
 		case FILTER_HOUSES: {
 			return { ...state, listOfHouses: action.payload };
+		}
+		case SELECT_HOUSE: {
+			return { ...state, house: action.payload };
 		}
 		default: {
 			return state;
