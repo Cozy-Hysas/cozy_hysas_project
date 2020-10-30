@@ -16,7 +16,7 @@ const tenants = require("./routes/tenant");
 
 app.use("/house", houseRouter);
 app.use("/users",users);
-app.use("tenants",tenants);
+app.use("/tenants",tenants);
 
 
 const port = 3000;

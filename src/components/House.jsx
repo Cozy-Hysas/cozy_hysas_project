@@ -9,9 +9,11 @@ class Houses extends React.Component {
             description: "good one",
             price: "200",
             imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&w=1000&q=80",
-            feedBack: ["the service was good","Beautiful views"],
+            feedBack: ["the service was good", "Beautiful views"],
             startDate: "",
             endDate: "",
+            totalDays:0,
+            totalPrice:0,
             switch: "",
 
         };
@@ -23,7 +25,7 @@ class Houses extends React.Component {
     componentDidMount() {
 
         // this.props.house information from selim;
-       
+
     }
 
 
@@ -39,6 +41,16 @@ class Houses extends React.Component {
         })
     }
 
+    numberDays() {
+        var start= this.state.startDate.split("-");
+        var end = this.state.endDate.split("-");
+        var totalDays =  (Number (end[0]) - Number(start[0]))*365+(Number (end[1]) - Number(start[1]))*30 + (Number(end[2]) - Number(start[2]));
+        var totalPrice=this.state.price * totalDays
+        this.setState({
+            totalDays: totalDays,
+            totalPrice:totalPrice
+        })
+    }
 
     render() {
         if (this.state.switch === "") {
@@ -57,34 +69,35 @@ class Houses extends React.Component {
                             height="450" />
                         <br /><br />
                         description : {
-                                    this.state.description
-                                }
+                            this.state.description
+                        }
                         <br /><br />
-                        price : {
-                                    this.state.price
-                                }
+                        price per day : {
+                            this.state.price
+                        }
                         <br /><br />
-                        startDate{" "}
+                        feedback :
+                        {this.state.feedBack.map((feedback, i) => (
+                                <div key={i}>
+                                    <span>* {feedback}</span>
+                                </div>
+                            ))} <br />
+                        <form onSubmit={()=>{this.numberDays();this.onClick()}}>
+                            startDate :
                                 <input className="input" type="date" name="startDate"
-                                   required onChange={
-                                        this.handleEventOnChange
-                                    } />
-                        <br /><br />
-                        endDate{" "}
+                                required onChange={
+                                    this.handleEventOnChange
+                                } required />
+                            <br /><br />
+                        endDate :
                                 <input className="input" type="date" name="endDate"
-                                    required onChange={
-                                        this.handleEventOnChange
-                                    } /> 
-                        <br /><br />
-
-                        feedback : 
-                        {this.state.feedBack.map((feedback,i) =>(
-                            <div key={i}>
-                               <span>* {feedback}</span>
-                            </div>
-                        ))} <br />
+                                onChange={
+                                    this.handleEventOnChange
+                                } required />
+                            <br /><br />
                             <input type="submit" value="Confirm" className="submitBtn"
-                                 onClick={this.onClick.bind(this)} />
+                                 />
+                        </form>
                     </center>
                 </div>
             )
@@ -92,7 +105,7 @@ class Houses extends React.Component {
             return (
                 <div>
                     <center>
-                        <Purshas startDate={this.state.startDate} endDate={this.state.endDate} />
+                        <Purshas startDate={this.state.startDate} endDate={this.state.endDate} totalDays={this.state.totalDays} price={this.state.price} totalPrice={this.state.totalPrice}/>
                     </center>
                 </div>
             )
