@@ -1,5 +1,3 @@
-
-
 #HomePage {
 	background-image: url('https://image.freepik.com/free-photo/interior-has-armchair-empty-white-wall_41470-1722.jpg');
 	background-repeat: no-repeat;
@@ -16,3 +14,43 @@
 	color: #393244;
 }
 
+.houses-list-item {
+	min-height: 350px;
+	margin: 40px;
+	list-style: none;
+	border: 1px solid #77777769;
+	background-color: #fdfdfd;
+	border-radius: 4px;
+	padding: 30px 50px 0px 50px;
+	box-shadow: 0 0 1em #80808066;
+}
+
+.houses-list-item-image {
+	float: left;
+	width: 100%;
+	max-width: 356px;
+	max-height: 200px;
+	margin-right: 20px;
+	margin-bottom: 5%;
+}
+
+.houses-list-item-title {
+	font-size: 1.8em;
+	font-family: 'Francois One';
+	margin-bottom: 10px;
+}
+
+.houses-list-item-lede {
+	display: block;
+	margin-bottom: 50px;
+}
+
+.houses-list-item-byline {
+	font-size: 0.8em;
+	margin-bottom: 15px;
+	color: #777777;
+}
+
+.houses-list-item-byline-price {
+	font-weight: bolder;
+}
