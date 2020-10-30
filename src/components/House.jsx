@@ -3,6 +3,7 @@ import Purshas from './Purshas.jsx';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 class Houses extends React.Component {
+
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -135,6 +136,7 @@ class Houses extends React.Component {
 			);
 		}
 	}
+
 }
 
 Houses.propTypes = {

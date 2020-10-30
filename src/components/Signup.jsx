@@ -1,48 +1,50 @@
+
 import React, { Component } from 'react';
 import axios from 'axios';
 import Login from './Login.jsx';
 import { MDBContainer, MDBInput, MDBInputGroup } from 'mdbreact';
+
 class Signup extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			name: '',
-			email: '',
-			password: '',
-			phoneNumber: undefined,
-			address: '',
-			check: '',
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      phoneNumber: undefined,
+      address: "",
+      check: "",
+    };
+  }
 
-	myChangeHandler(event) {
-		let nam = event.target.name;
-		let val = event.target.value;
-		this.setState({ [nam]: val });
-	}
+  myChangeHandler(event) {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({ [nam]: val });
+  }
 
-	SignUp(e) {
-		e.preventDefault();
-		const user = {
-			name: this.state.name,
-			email: this.state.email,
-			password: this.state.password,
-			phoneNumber: this.state.phoneNumber,
-			address: this.state.address,
-		};
-		axios.post(`/users/signup`, { user }).then(() => {
-			this.setState({
-				name: '',
-				email: '',
-				password: '',
-				phoneNumber: undefined,
-				address: '',
-			});
-			this.setState({
-				check: 'login',
-			});
-		});
-	}
+  SignUp(e) {
+    e.preventDefault();
+    const user = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      phoneNumber: this.state.phoneNumber,
+      address: this.state.address,
+    };
+    axios.post(`/users/signup`, { user }).then(() => {
+      this.setState({
+        name: "",
+        email: "",
+        password: "",
+        phoneNumber: undefined,
+        address: "",
+      });
+      this.setState({
+        check: "login",
+      });
+    });
+  }
 
 	render() {
 		if (this.state.check === '') {
@@ -135,6 +137,7 @@ class Signup extends Component {
 			return <Login />;
 		}
 	}
+
 }
 
 export default Signup;
