@@ -10,30 +10,22 @@ class SignupTenant extends Component {
       password: "",
       phoneNumber: "",
       address: "",
+      numeroCart: "",
+      cvv2: "",
       check: "",
     };
-    this.changeName = this.changeName.bind(this);
-    this.changeEmail = this.changeEmail.bind(this);
-    this.changePassword = this.changePassword.bind(this);
-    this.changePhoneNumber = this.changePhoneNumber.bind(this);
-    this.changeAddress = this.changeAddress.bind(this);
+    this.tenantInfoChange = this.tenantInfoChange.bind(this);
     this.signup = this.signup.bind(this);
   }
-  changeName(event) {
-    this.setState({ name: event.target.value });
+
+
+  tenantInfoChange(e) {
+    var name = e.target.name;
+    var value = e.target.value;
+    this.setState({ [name]: value });
   }
-  changeEmail(event) {
-    this.setState({ email: event.target.value });
-  }
-  changePassword(event) {
-    this.setState({ password: event.target.value });
-  }
-  changePhoneNumber(event) {
-    this.setState({ phoneNumber: event.target.value });
-  }
-  changeAddress(event) {
-    this.setState({ address: event.target.value });
-  }
+
+
   signup(event) {
     event.preventDefault();
     axios
@@ -43,6 +35,8 @@ class SignupTenant extends Component {
         password: this.state.password,
         phoneNumber: this.state.phoneNumber,
         address: this.state.address,
+        numeroCart: this.state.numeroCart,
+        cvv2: this.state.cvv2,
       })
       .then(() => {
         this.setState({
@@ -51,7 +45,9 @@ class SignupTenant extends Component {
           password: "",
           phoneNumber: "",
           address: "",
-          check:"loginTenant"
+          numeroCart: "",
+          cvv2: "",
+          check: "loginTenant"
         });
       })
       .catch((err) => console.log(err, "errrrr"));
@@ -60,47 +56,80 @@ class SignupTenant extends Component {
     if (this.state.check === "") {
       return (
         <div className="signup">
+          <center>
           <form className="form-signup" onSubmit={(event) => this.signup(event)}>
-          <input
-            type="text"
-            placeholder="put your name here"
-            value={this.state.name}
-            onChange={this.changeName}
-            minLength = "6"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Put your password here"
-            value={this.state.password}
-            onChange={this.changePassword}
-            minLength = "6"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Put your email here"
-            value={this.state.email}
-            onChange={this.changeEmail}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Put your phone number here"
-            value={this.state.phoneNumber}
-            onChange={this.changePhoneNumber}
-            minLength = "8"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Put your address here"
-            value={this.state.address}
-            onChange={this.changeAddress}
-            required
-          />
-          <input type="submit" value="Create An Account"/>
+            <input
+              type="text"
+              name="name"
+              placeholder="put your name here"
+              value={this.state.name}
+              onChange={this.tenantInfoChange}
+              minLength="6"
+              required
+            />
+            <br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Put your password here"
+              value={this.state.password}
+              onChange={this.tenantInfoChange}
+              minLength="6"
+              required
+            />
+            <br />
+            <input
+              type="email"
+              name="email"
+              placeholder="Put your email here"
+              value={this.state.email}
+              onChange={this.tenantInfoChange}
+              required
+            />
+            <br />
+            <input
+              type="text"
+              name="phoneNumber"
+              placeholder="Put your phone number here"
+              value={this.state.phoneNumber}
+              onChange={this.tenantInfoChange}
+              minLength="8"
+              required
+            />
+            <br />
+            <input
+              type="text"
+              name="address"
+              placeholder="Put your address here"
+              value={this.state.address}
+              onChange={this.tenantInfoChange}
+              required
+            />
+            <br />
+            <input
+              type="text"
+              name="numeroCart"
+              placeholder="put your numeroCart here"
+              value={this.state.numeroCart}
+              onChange={this.tenantInfoChange}
+              minLength="16"
+              required
+            />
+            <br />
+            <input
+              type="text"
+              name="cvv2"
+              placeholder="put your cvv2 here"
+              value={this.state.cvv2}
+              onChange={this.tenantInfoChange}
+              minLength="3"
+              maxLength="3"
+              required
+            />
+            <br /><br />
+            <input type="submit" value="Create An Account" />
           </form>
+          </center>
         </div>
       );
     } else {
