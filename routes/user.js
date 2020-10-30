@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require('bcryptjs');
-const {registerValidation,loginValidation} = require('./validation');
+const {registerValidationUsers,loginValidationUsers} = require('./validation');
 
 router.get('/', async (req, res) => {
     await User.find()
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 
 router.post("/signup", async (req, res) => {
     //Validation register
-    const {error} = registerValidation(req.body.user)
+    const {error} = registerValidationUsers(req.body.user)
     if(error) return res.send(error.details[0].message)
     //Cheking email 
     const emailExists = await User.findOne({email: req.body.user.email})
@@ -35,7 +35,7 @@ router.post("/signup", async (req, res) => {
 
 router.post('/login', async (req, res) => {
     //Validation register
-    const { error } = loginValidation(req.body)
+    const { error } = loginValidationUsers(req.body)
     if (error) return res.send(error.details[0].message)
     //Cheking email 
     const user = await User.findOne({ email: req.body.email })

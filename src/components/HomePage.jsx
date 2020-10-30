@@ -1,62 +1,80 @@
-import React from 'react';
-import {MDBInputGroup , MDBContainer} from "mdbreact";
+import React from "react";
+import { MDBContainer, MDBInput } from "mdbreact";
+import HousesList from "./HousesList.jsx";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import {
+  fetchHouses,
+  filterHouseByAddress,
+} from "../redux/actions/houseAction";
 
-
+import "react-datepicker/dist/react-datepicker.css";
 
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      address: "",
+      check: "",
+    };
 
-  render() {
-    return(
-        <>
-            <h3>Welcome to Cozy hysas!</h3>
-            <MDBContainer>
-                <MDBInputGroup containerClassName="mb-3" prepend="@" hint="Username" />
-                <MDBInputGroup containerClassName="mb-3" append="@example.com" hint="Recipient's username" />
-                <MDBInputGroup
-                    label="Your vanity URL"
-                    containerClassName="mb-3"
-                    prepend="https://example.com/users/"
-                    id="basic-url"
-                />
-                <MDBInputGroup containerClassName="mb-3" prepend="$" append=".00" />
-                <MDBInputGroup prepend="With textarea" type="textarea" />
-            </MDBContainer>
-        </>
-    )
+    this.handleEventchange = this.handleEventchange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  handleClick() {
+    this.props.filterHouseByAddress(this.state.address);
+  }
+  handleEventchange(e) {
+    this.setState({
+      address: e.target.value,
+    });
+  }
+
+  render() {
+    if (this.state.check === "") {
+      return (
+        <div id="HomePage">
+          <h3 className="Title">Welcome to Cozy hysas!</h3>
+          <MDBContainer>
+            <MDBInput
+              label="Address: Where are you going? "
+              outline
+              size="lg"
+              onChange={this.handleEventchange}
+            />
+            <button
+              className="btn btn-outline-secondary"
+              onClick={this.handleClick}
+            >
+              Confirm choice
+            </button>
+            {/*<DatePicker selected={startdate} onChange={date => setStartDate(date)} /> const [startDate, setStartDate] = useState(new Date());*/}
+          </MDBContainer>
+        </div>
+      );
+    } else {
+      return (
+        <center>
+          <div>
+            <HousesList />
+          </div>
+        </center>
+      );
+    }
+  }
 }
+HomePage.propTypes = {
+  fetchHouses: PropTypes.func.isRequired,
+  filterHouseByAddress: PropTypes.func.isRequired,
+  listOfHouses: PropTypes.object.isRequired,
+};
 
-export default HomePage;
-
-
-// return (
-//
-//     <div>
-//         <div>
-//             <h3>Welcome to Cozy hysas!</h3>
-//         </div>
-//         <div>
-//
-//         </div>
-//         <MDBInputGroup
-//             prepend="Search for your House here"
-//             inputs={
-//                 <>
-//                     <MDBInput noTag type="text" hint="Where are you going?"/>
-//                     <MDBCardTitle>Choose your rang of price</MDBCardTitle>
-//                     <MDBRow className="my-4" center>
-//                         <MDBIcon className="font-weight-bold indigo-text mr-2 mt-1" icon="minus"/>
-//                         <MDBIcon className="font-weight-bold indigo-text ml-2 mt-1" icon="plus" />
-//                     </MDBRow>
-//                     <MDBBtn color="Grey" rounded size="sm" type="submit" className="mr-auto">
-//                         Search
-//                     </MDBBtn>
-//                 </>
-//             }
-//         />
-//     </div>
-//
-// );
-
-
+const mapStateToProps = (state) => ({
+  fetchHouses: PropTypes.func.isRequired,
+  filterHouseByAddress: PropTypes.func.isRequired,
+  listOfHouses: state.house.listOfHouses,
+});
+export default connect(mapStateToProps, { fetchHouses, filterHouseByAddress })(
+  HomePage
+);
