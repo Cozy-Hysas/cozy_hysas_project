@@ -19,18 +19,17 @@ class SignupTenant extends Component {
     this.signup = this.signup.bind(this);
   }
 
-
   tenantInfoChange(e) {
     var name = e.target.name;
     var value = e.target.value;
     this.setState({ [name]: value });
   }
 
-
   signup(event) {
     event.preventDefault();
     axios
-      .post("http://localhost:3000/tenants/signup", {
+
+      .post("/tenants/signup", {
         name: this.state.name,
         email: this.state.email,
         password: this.state.password,
@@ -48,7 +47,7 @@ class SignupTenant extends Component {
           address: "",
           numeroCart: "",
           cvv2: "",
-          check: "loginTenant"
+          check: "loginTenant",
         });
       })
       .catch((err) => console.log(err, "errrrr"));
@@ -58,8 +57,6 @@ class SignupTenant extends Component {
       return (
         <div className="signup">
           <center>
-							
-
           <form className="form-signup" onSubmit={(event) => this.signup(event)}>
           <MDBContainer>
 								Name <br></br>

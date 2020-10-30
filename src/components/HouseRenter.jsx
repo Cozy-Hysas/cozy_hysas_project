@@ -1,38 +1,39 @@
-import React from 'react';
-import Map from './GoogleMap.jsx';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { addHouse } from '../redux/actions/houseAction';
-import { MDBContainer, MDBInput, MDBInputGroup } from 'mdbreact';
+import React from "react";
+import Map from "./GoogleMap.jsx";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { addHouse } from "../redux/actions/houseAction";
+import { MDBContainer, MDBInput, MDBInputGroup } from "mdbreact";
 
 class HouseRenter extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: '',
-			imageUrl: '',
-			description: '',
-			adress: '',
-			price: 0,
-			startDate: null,
-			endDate: null,
-		};
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      imageUrl: "",
+      description: "",
+      adress: "",
+      price: 0,
+      startDate: null,
+      endDate: null,
+    };
 
-		this.handleEventOnChange = this.handleEventOnChange.bind(this);
-		this.handleEventOnClick = this.handleEventOnClick.bind(this);
-	}
+    this.handleEventOnChange = this.handleEventOnChange.bind(this);
+    this.handleEventOnClick = this.handleEventOnClick.bind(this);
+  }
 
-	handleEventOnChange(e) {
-		var name = e.target.name;
-		var value = e.target.value;
-		this.setState({
-			[name]: value,
-		});
-	}
-	handleEventOnClick(e) {
-		e.preventDefault();
-		this.props.addHouse(this.state);
-	}
+  handleEventOnChange(e) {
+    var name = e.target.name;
+    var value = e.target.value;
+    this.setState({
+      [name]: value,
+    });
+  }
+  handleEventOnClick(e) {
+    e.preventDefault();
+    this.props.addHouse(this.state);
+  }
+
 
 	render() {
 		return (
@@ -116,31 +117,32 @@ class HouseRenter extends React.Component {
 								</button>
 							</MDBContainer>
 
-							<br></br>
-							<br></br>
-						</form>
-						<div style={{ margin: '50px' }}>
-							<Map
-								google={this.props.google}
-								center={{ lat: 36.894244, lng: 10.186992 }}
-								height="300px"
-								zoom={15}
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
-		);
-	}
+
+              <br></br>
+              <br></br>
+            </form>
+            <div style={{ margin: "50px" }}>
+              <Map
+                google={this.props.google}
+                center={{ lat: 36.894244, lng: 10.186992 }}
+                height="300px"
+                zoom={15}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 HouseRenter.propTypes = {
-	addHouse: PropTypes.func.isRequired,
-	house: PropTypes.object.isRequired,
+  addHouse: PropTypes.func.isRequired,
+  house: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-	addHouse: PropTypes.func.isRequired,
-	house: state.house.house,
+  addHouse: PropTypes.func.isRequired,
+  house: state.house.house,
 });
 export default connect(mapStateToProps, { addHouse })(HouseRenter);

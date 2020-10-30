@@ -3,6 +3,12 @@ import { Navbar, Nav } from 'react-bootstrap';
 //import img from './logImg/CozyHysas1.png'
 
 class Header extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			check: ''
+		}
+	}
 	render() {
 		return (
 			<div>

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Purshas from './Purshas.jsx';
 class Houses extends React.Component {
+
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -133,6 +134,7 @@ class Houses extends React.Component {
 			);
 		}
 	}
+
 }
 
 export default Houses;
