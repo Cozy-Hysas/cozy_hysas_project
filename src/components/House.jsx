@@ -9,83 +9,91 @@ class Houses extends React.Component {
             description: "good one",
             price: "200",
             imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&w=1000&q=80",
-            feedBacks:"the service was good",
+            feedBack: ["the service was good","Beautiful views"],
             startDate: "",
             endDate: "",
-            switch : "",
+            switch: "",
 
         };
 
-        this.handleChange = this.handleChange.bind(this);
+
         this.handleEventOnChange = this.handleEventOnChange.bind(this);
     }
-    handleChange(e) {
-        this.setState({data: e.target.value});
+
+    componentDidMount() {
+
+        // this.props.house information from selim;
+       
     }
+
+
     handleEventOnChange(e) {
         var name = e.target.name;
         var value = e.target.value;
-        this.setState({[name]: value});
+        this.setState({ [name]: value });
     }
-      
-onClick() {
-    this.setState({
-        switch:"purchase"
-    })
-}
 
+    onClick() {
+        this.setState({
+            switch: "purchase"
+        })
+    }
 
-
-    // componentDidMount(){
-    //     axios.get("http://localhost:3000/api/houses")
-    //     .then(response=>{
-    //         this.setState({data:response.data})
-    //     })
-
-    //    }
 
     render() {
-        if (this.state.switch === ""){
-        return (
-            <div> {
-                this.state.title
-            }
-                <br/>
-                <img src={
-                        this.state.imageUrl
-                    }
-                    alt="image url "
-                    width="250"
-                    height="200"/>{" "}
-                <br/>
-                description : {
-                this.state.description
-            }
-                <br/>
-                price : {
-                this.state.price
-            }
-                <br/>
-                startDate{" "}
-                <input className="input" type="date" name="startDate"
-                    onChange={
-                        this.handleEventOnChange
-                    }/>
-                <br/>
-                endDate{" "}
-                <input className="input" type="date" name="endDate"
-                    onChange={
-                        this.handleEventOnChange
-                    }/> <br/>
-
-                    feedbacks :{this.state.feedBacks} <br/>
-                    <input type="submit" value="Confirm" className="submitBtn"
-            onClick={this.onClick.bind(this)} />
-            </div>
-        )}else if(this.state.switch==='purchase'){
-            return(
+        if (this.state.switch === "") {
+            return (
                 <div>
-                    <Purshas  startDate={this.state.startDate} endDate={this.state.endDate} />
+                    <center>
+                        {
+                            this.state.title
+                        }
+                        <br /><br />
+                        <img src={
+                            this.state.imageUrl
+                        }
+                            alt="house "
+                            width="700"
+                            height="450" />
+                        <br /><br />
+                        description : {
+                                    this.state.description
+                                }
+                        <br /><br />
+                        price : {
+                                    this.state.price
+                                }
+                        <br /><br />
+                        startDate{" "}
+                                <input className="input" type="date" name="startDate"
+                                   required onChange={
+                                        this.handleEventOnChange
+                                    } />
+                        <br /><br />
+                        endDate{" "}
+                                <input className="input" type="date" name="endDate"
+                                    required onChange={
+                                        this.handleEventOnChange
+                                    } /> 
+                        <br /><br />
+
+                        feedback : 
+                        {this.state.feedBack.map((feedback,i) =>(
+                            <div key={i}>
+                               <span>* {feedback}</span>
+                            </div>
+                        ))} <br />
+                            <input type="submit" value="Confirm" className="submitBtn"
+                                 onClick={this.onClick.bind(this)} />
+                    </center>
+                </div>
+            )
+        } else if (this.state.switch === 'purchase') {
+            return (
+                <div>
+                    <center>
+                        <Purshas startDate={this.state.startDate} endDate={this.state.endDate} />
+                    </center>
                 </div>
             )
         }
