@@ -1,14 +1,18 @@
- {
-    
-    background-image: url("https://image.freepik.com/free-photo/interior-has-armchair-empty-white-wall_41470-1722.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-  }
-  .Title{
-    font-size: 2em;
-    margin-right: auto;
-    margin-left: 10px;
-    color: #393244;
-  }
+
+
+#HomePage {
+	background-image: url('https://image.freepik.com/free-photo/interior-has-armchair-empty-white-wall_41470-1722.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: auto;
+	width: auto;
+	overflow-y: auto;
+}
+.Title {
+	font-size: 2em;
+	margin-right: auto;
+	margin-left: 10px;
+	color: #393244;
+}
+
