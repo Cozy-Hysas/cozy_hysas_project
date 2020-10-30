@@ -9,7 +9,7 @@ class Header extends React.Component {
 				<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 					<Navbar.Brand href="#home">
 						<img 
-							src="https://cdn1.vectorstock.com/i/1000x1000/93/40/funny-snail-with-cozy-house-on-its-back-cute-vector-23399340.jpg" 
+							src="https://cdn1.vectorstock.com/i/1000x1000/89/70/house-with-heart-blue-line-icon-love-home-vector-23308970.jpg" 
 							width="50"
 							height="50"
 							className="d-inline-block align-top"
