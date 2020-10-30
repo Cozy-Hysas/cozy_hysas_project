@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBContainer, MDBInput } from 'mdbreact';
-
 import 'react-datepicker/dist/react-datepicker.css';
 
 class HomePage extends React.Component {
@@ -14,7 +13,7 @@ class HomePage extends React.Component {
 			returnDate: 0,
 			period: 0,
 			Price: 0,
-		};
+		}; 
 
 		this.handleEventchange = this.handleEventchange.bind(this);
 	}
@@ -33,7 +32,7 @@ class HomePage extends React.Component {
 	render() {
 		return (
 			<>
-				<h3>Welcome to Cozy hysas!</h3>
+				<h3 className="Title">Welcome to Cozy hysas!</h3>
 
 				<MDBContainer>
 					<MDBInput
