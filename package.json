@@ -1,0 +1,64 @@
+{
+  "name": "hysas_project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.20.0",
+    "axois": "0.0.1-security",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "jquery.terminal": "^2.18.3",
+    "mdbreact": "^4.27.0",
+    "mongoose": "^5.10.6",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "react-geocode": "^0.2.2",
+    "react-google-autocomplete": "^1.2.6",
+    "react-google-maps": "^9.4.5",
+    "react-redux": "^7.2.2",
+    "react-scripts": "4.0.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "axios": "^0.21.0",
+    "jquery": "^3.5.1",
+    "react-geocode": "^0.2.2"
+  }
+}
