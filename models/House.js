@@ -4,7 +4,7 @@ const houseSchema = new mongoose.Schema({
   title: {type: String, required:true},
   imageUrl: {type: String, required:true},
   description: {type: String, required:true},
-  adress:{type: String, required:true},
+  address:{type: String, required:true},
   price: {type: Number, required:true},
   startDate: {type: Date, required:true},
   endDate: {type: Date, required:true},
