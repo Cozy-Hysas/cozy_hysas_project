@@ -49,7 +49,7 @@ class HousesList extends React.Component {
                     return(
                     <div key={i}>
                         <h1 className="houseTitle" onClick={this.click.bind(this)}>{house.title}</h1>
-                        <img src={house.imageUrl} onClick={this.click.bind(this)} className="houseimage" />
+                        <img src={house.imageUrl} alt = "" onClick={this.click.bind(this)} className="houseimage" />
                         <span className="description">{house.description} </span>
                         <div className="price"><span className="housePrice">{house.price} </span> </div>
                     </div>
