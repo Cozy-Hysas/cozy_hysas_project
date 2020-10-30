@@ -20,8 +20,7 @@ let fakeData = [
 	},
 	{
 		_id: 'abcdg',
-		title:
-			'Then Replace It With Data Obtained from your Server and Database',
+		title: 'Then Replace It With Data Obtained from your Server and Database',
 		imageUrl: 'https://source.unsplash.com/1600x900/?airplane',
 		description: `Ebihalar ejo wemes tentewih awziv ocanerir sitbi bod jahfu dumtivub sucov om rapic hasgusbep hogtolfa beccuro usiro nepguup.`,
 		price: 318,
@@ -33,7 +32,7 @@ let fakeData = [
 		description: `Wiebsa we ad jenubsu hamjes pulwa feh zeutgo vumpubsef sos is use fimeh as onbo.`,
 		price: 479,
 	},
-],
+];
 
 export const addHouse = (newHouse) => (dispatch) => {
 	console.log('it comes to the addhouse action');
@@ -43,8 +42,7 @@ export const addHouse = (newHouse) => (dispatch) => {
 	});
 };
 export const fetchHouses = () => (dispatch) => {
-	console.log('it comes to the  filter house action');
-	dispatch({ type: FILTERED_HOUSES, payload: fakeData });		
+	dispatch({ type: FILTERED_HOUSES, payload: fakeData });
 	/* $.get('/House').then((listOfFilteredHousesFromDB) => {
 		console.log('it made the server call of the fetch list of houses action');
 		dispatch({ type: FILTERED_HOUSES, payload: listOfFilteredHousesFromDB });
