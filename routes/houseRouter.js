@@ -49,6 +49,7 @@ router.put('/:id', async (req, res) => {
     .then(() => res.json("house updated"))
     .catch(() => res.status(400).json('Error: ' + err))
     
-  })
+  });
+  
 
 module.exports = router;

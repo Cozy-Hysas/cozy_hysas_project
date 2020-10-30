@@ -1,29 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MDBContainer, MDBInput }from "mdbreact";
-import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
-import PropTypes from "prop-types";
+
 
 
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        data: [],
+        view: 'HomePage',
+        chosenAddress: {},
+        pickupDate: 0,
+        returnDate: 0,
+        period: 0,
+        Price: 0,
+      
+    }
+    
+    this.handleEventchange = this.handleEventchange.bind(this);
+  
+
+}
+
+
+
+  handleEventchange(e) {
+    var address = e.target.value;
+    var currentAdress = this.state.data.filter(house => house.address === address)
+    this.setState({
+        chosenAddress: currentAdress[0]
+       
+    })
+    console.log(currentAdress)
+}
 
   render() {
-    const [startDate, setStartDate] = useState(new Date());
+    
     return(
         <>
             <h3>Welcome to Cozy hysas!</h3>
 
-            
-
             <MDBContainer>
-      
-                <MDBInput label="Address: Where are you going? " outline size="lg" />
-                
-                
-                <DatePicker selected={startdate} onChange={date => setStartDate(date)} />
-                
-
-
+                <MDBInput label="Address: Where are you going? " outline size="lg" onChange={this.handleEventchange}/>
+                <button className="btn btn-outline-secondary" >Confirm choice</button>    
+              {/*<DatePicker selected={startdate} onChange={date => setStartDate(date)} /> const [startDate, setStartDate] = useState(new Date());*/} 
             </MDBContainer>
         </>
     )

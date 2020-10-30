@@ -12,6 +12,8 @@ import Footer from './components/Footer.jsx';
 import HousesList from './components/HousesList.jsx';
 import { Provider } from 'react-redux';
 import { store } from './redux/Store.js';
+import LoginTenant from './components/LoginTenant.jsx';
+import SignupTenant from './components/SignupTenant.jsx';
 class Index extends React.Component {
 	render() {
 		return (
@@ -24,6 +26,8 @@ class Index extends React.Component {
 					<Signup />
 					<HousesList />
 					<Footer />
+					<LoginTenant/>
+					<SignupTenant/>
 				</div>
 			</Provider>
 		);

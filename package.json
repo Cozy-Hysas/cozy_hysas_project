@@ -12,6 +12,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "jquery.terminal": "^2.18.3",
@@ -33,6 +34,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "dev": "nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
