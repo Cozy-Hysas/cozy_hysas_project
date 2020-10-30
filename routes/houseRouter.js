@@ -13,7 +13,6 @@ router.post('/addHouse', (req, res) => {
 	const imageUrl = req.body.imageUrl;
 	const price = req.body.price;
 	const address = req.body.address;
-
 	const startDate = req.body.startDate;
 	const endDate = req.body.endDate;
 	const feedBack = req.body.feedBack;
