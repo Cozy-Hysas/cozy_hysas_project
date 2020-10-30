@@ -8,7 +8,7 @@ class Header extends React.Component {
           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#home">
               <img
-                  src="/logo.svg"
+                  src="C:\Users\helay\OneDrive\Bureau\cozy_hysas_project\logImg\Cozy hysas1.jpg"
                   width="30"
                   height="30"
                   className="d-inline-block align-top"

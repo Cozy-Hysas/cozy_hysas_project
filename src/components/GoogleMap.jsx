@@ -180,8 +180,8 @@ class Map extends React.Component{
  onMarkerDragEnd ( event ) {
   
   let newLat = event.latLng.lat(),
-   newLng = event.latLng.lng();
-   Geocode.fromLatLng( newLat , newLng ).then(
+   newLng = event.latLng.lng(),
+   addressArray = [];Geocode.fromLatLng( newLat , newLng ).then(
    response => {
     const address = response.results[0].formatted_address,
      addressArray =  response.results[0].address_components,
@@ -246,7 +246,7 @@ class Map extends React.Component{
         marginBottom: '100px'
        }}
        onPlaceSelected={ this.onPlaceSelected }
-       types={['(address)']}
+       types={['(region)']}
       />
              {/* InfoWindow on top of marker */}
       <InfoWindow
