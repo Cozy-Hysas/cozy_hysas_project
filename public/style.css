@@ -56,3 +56,32 @@
 	font-weight: bolder;
 }
 
+.house {
+	width: 80%;
+	margin: 0 auto;
+	max-width: 800px;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	background-color: white;
+	padding: 5px 20px 5px 20px;
+}
+
+.house-title {
+	font-family: 'Francois One';
+	line-height: 1.5em;
+}
+
+.house-image {
+	max-width: 100%;
+}
+
+.house-byline {
+	color: #777777;
+	font-size: 0.8em;
+	margin-bottom: 5%;
+}
+
+.house-byline-price {
+	font-weight: bolder;
+}
+
