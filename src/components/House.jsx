@@ -1,39 +1,111 @@
-// import React from 'react';
-// import axios from 'axios';
-//  class Houses extends React.Component  {
-//      constructor(props) {
-//          super(props);
-//          this.state = {
-//              data:[]
-//          }
+import React from "react";
+import axios from "axios";
+import Purshas from "./Purshas.jsx";
+class Houses extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "vilaa",
+      description: "good one",
+      price: "200",
+      imageUrl:
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&w=1000&q=80",
+      feedBack: ["the service was good", "Beautiful views"],
+      startDate: "",
+      endDate: "",
+      switch: "",
+    };
 
-// //    this.handleChange = this.handleChange.bind(this);
-//         }
+    this.handleEventOnChange = this.handleEventOnChange.bind(this);
+  }
 
+  componentDidMount() {
+    // this.props.house information from selim;
+  }
 
-//         componentDidMount(){
-//             axios.get("http://localhost:3000/houses")
-//             .then(response=>{
-//                 this.setState({data:response.data})
-//             })
-          
-//            }
+  handleEventOnChange(e) {
+    var name = e.target.name;
+    var value = e.target.value;
+    this.setState({ [name]: value });
+  }
 
-//      render() { 
-//          return (
-//              <div>
-//                  {
-//                  this.state.data.map((data, index)=>{
-//                      return (
-//                          <div key={data._id} style={{backgroundImage:`url:(${data.imageurl})`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
-//                      <h1>{data.title}</h1>
+  onClick() {
+    this.setState({
+      switch: "purchase",
+    });
+  }
 
-//                      </div>
-//                      )
-//                  })}
-//              </div>
-//           );
-//      }
-//  }
-  
-//  export default Houses;
+  render() {
+    if (this.state.switch === "") {
+      return (
+        <div>
+          <center>
+            {this.state.title}
+            <br />
+            <br />
+            <img
+              src={this.state.imageUrl}
+              alt="house "
+              width="700"
+              height="450"
+            />
+            <br />
+            <br />
+            description : {this.state.description}
+            <br />
+            <br />
+            price : {this.state.price}
+            <br />
+            <br />
+            startDate{" "}
+            <input
+              className="input"
+              type="date"
+              name="startDate"
+              required
+              onChange={this.handleEventOnChange}
+            />
+            <br />
+            <br />
+            endDate{" "}
+            <input
+              className="input"
+              type="date"
+              name="endDate"
+              required
+              onChange={this.handleEventOnChange}
+            />
+            <br />
+            <br />
+            feedback :
+            {this.state.feedBack.map((feedback, i) => (
+              <div key={i}>
+                <span>* {feedback}</span>
+              </div>
+            ))}{" "}
+            <br />
+            <input
+              type="submit"
+              value="Confirm"
+              className="submitBtn"
+              onClick={this.onClick.bind(this)}
+            />
+          </center>
+        </div>
+      );
+    } else if (this.state.switch === "purchase") {
+      return (
+        <div>
+          <center>
+            <Purshas
+              startDate={this.state.startDate}
+              endDate={this.state.endDate}
+            />
+          </center>
+        </div>
+      );
+    }
+  }
+}
+
+export default Houses;
