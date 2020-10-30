@@ -1,18 +1,20 @@
 import React from 'react';
-import axios from 'axios';
 import Purshas from './Purshas.jsx';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 class Houses extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: 'vilaa',
+			feedBack: ['the service was good', 'Beautiful views'],
+			/* title: 'vilaa',
 			description: 'good one',
 			price: '200',
 			imageUrl:
 				'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&w=1000&q=80',
-			feedBack: ['the service was good', 'Beautiful views'],
-			startDate: '',
+			*/ startDate:
+				'',
 			endDate: '',
 			totalDays: 0,
 			totalPrice: 0,
@@ -22,9 +24,9 @@ class Houses extends React.Component {
 		this.handleEventOnChange = this.handleEventOnChange.bind(this);
 	}
 
-	componentDidMount() {
+	/* 	componentDidMount() {
 		// this.props.house information from selim;
-	}
+	} */
 
 	handleEventOnChange(e) {
 		var name = e.target.name;
@@ -45,7 +47,7 @@ class Houses extends React.Component {
 			(Number(end[0]) - Number(start[0])) * 365 +
 			(Number(end[1]) - Number(start[1])) * 30 +
 			(Number(end[2]) - Number(start[2]));
-		var totalPrice = this.state.price * totalDays;
+		var totalPrice = this.props.house.price * totalDays;
 		this.setState({
 			totalDays: totalDays,
 			totalPrice: totalPrice,
@@ -57,11 +59,11 @@ class Houses extends React.Component {
 			return (
 				<div className="house">
 					<center>
-						<h1 className="house-title">{this.state.title}</h1>
+						<h1 className="house-title">{this.props.house.title}</h1>
 						<br />
 						<br />
 						<img
-							src={this.state.imageUrl}
+							src={this.props.house.imageUrl}
 							alt="house "
 							className="house-image"
 						/>
@@ -69,12 +71,12 @@ class Houses extends React.Component {
 						<br />
 						<div className="house-byline">
 							<p style={{ whiteSpace: 'pre-line' }}>
-								description : {this.state.description}
+								description : {this.props.house.description}
 							</p>
 							<br />
 							<br />
 							<span className="house-byline-price">
-								price per day : {this.state.price}
+								price per day : {this.props.house.price}
 							</span>
 							<br />
 							<br />
@@ -137,4 +139,11 @@ class Houses extends React.Component {
 
 }
 
-export default Houses;
+Houses.propTypes = {
+	house: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+	house: state.house.house,
+});
+export default connect(mapStateToProps, {})(Houses);
