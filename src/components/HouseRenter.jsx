@@ -3,6 +3,7 @@ import Map from './GoogleMap.jsx';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addHouse } from '../redux/actions/houseAction';
+import { MDBContainer, MDBInput,MDBInputGroup } from 'mdbreact';
 
 class HouseRenter extends React.Component {
 	constructor(props) {
@@ -54,67 +55,82 @@ class HouseRenter extends React.Component {
 	render() {
 		return (
 			<div>
+				
 				<div className="add">
 					<div className="add-house">
-						<h3>Enter information for the House to rent</h3>
+						<h3 className="Title">Enter information for the House to rent</h3>
 						<form onSubmit={this.handleEventOnClick}>
-							Title:{' '}
-							<input
-								className="input"
-								type="text"
-								name="title"
-								onChange={this.handleEventOnChange}
+
+						<MDBContainer>
+
+					Title to the house{' '}
+					<br></br>
+					<MDBInput
+					    className="input"
+						label="Please give a title to the house "
+						outline
+						size="lg"
+						onChange={this.handleEventOnChange}
 								required
-							/>
-							<br></br>
-							Image:{' '}
-							<input
-								className="input"
-								type="text"
-								name="imageUrl"
-								onChange={this.handleEventOnChange}
-							/>
-							<br></br>
-							Description:{' '}
-							<textarea
-								className="textarea"
-								name="description"
+					/>
+					Image{' '}
+					<br></br>
+					<MDBInput
+					    className="input"
+						label="Please add a URL for the house's image "
+						outline
+						size="lg"
+						onChange={this.handleEventOnChange}
+								required
+					/>
+					Please add a description of the house{' '}
+					<br></br>
+					 <MDBInputGroup 
+					 placeholder="Please add a description of the house "
+					 type="textarea" 
+					 name="description"
 								cols="30"
 								rows="10"
-								onChange={this.handleEventOnChange}
+					onChange={this.handleEventOnChange}
+								required/>
+
+                    Address{' '}
+					<br></br>
+					<MDBInput
+					    className="input"
+						label="Please add the address of the house "
+						outline
+						size="lg"
+						onChange={this.handleEventOnChange}
 								required
-							></textarea>
-							<br></br>
-							Adress:{' '}
-							<input
-								className="input"
-								type="text"
-								name="adress"
-								onChange={this.handleEventOnChange}
-								required
-							/>
-							<br></br>
-							Price:{' '}
-							<input
-								className="input"
-								type="number"
-								name="price"
-								min="0"
-								max="100"
-								onChange={this.handleEventOnChange}
-								required
-							/>
-							<br></br>
-							daysOfService: startDate{' '}
-							<input
+					/>
+
+                    Price{' '}
+					<br></br>
+						<MDBInputGroup containerClassName="mb-3" 
+						prepend="DT" 
+						append=".00"
+						min="0"
+						max="800"
+						onChange={this.handleEventOnChange}
+						required
+							/> 
+
+				    start Date{' '}
+					<br></br>
+					<div className='date'>
+					<input
 								className="input"
 								type="date"
 								name="startDate"
 								onChange={this.handleEventOnChange}
 								required
 							/>
-							<br></br>
-							EndDate{' '}
+					</div>
+					<br></br>
+					End Date{' '}	
+					<br></br>	
+					<div className='date'>		
 							<input
 								className="input"
 								type="date"
@@ -122,11 +138,13 @@ class HouseRenter extends React.Component {
 								onChange={this.handleEventOnChange}
 								required
 							/>
-							<br></br>
-							<button className="btn btn-success" type="submit">
-								Add my House
-							</button>
-							<br></br>
+							</div>	
+							<br></br>	
+							<button className="btn btn-outline-secondary">Add my house</button>
+				</MDBContainer>
+							
+							
+							<br></br><br></br>
 						</form>
 						<div style={{ margin: '50px' }}>
 							<Map
@@ -134,6 +152,7 @@ class HouseRenter extends React.Component {
 								center={{ lat: 36.894244, lng: 10.186992 }}
 								height="300px"
 								zoom={15}
+								
 							/>
 						</div>
 					</div>

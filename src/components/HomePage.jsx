@@ -1,11 +1,13 @@
 import React from 'react';
 import { MDBContainer, MDBInput } from 'mdbreact';
+
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
 	fetchHouses,
 	filterHouseByAddress,
 } from '../redux/actions/houseAction';
+
 import 'react-datepicker/dist/react-datepicker.css';
 
 class HomePage extends React.Component {
@@ -21,6 +23,7 @@ class HomePage extends React.Component {
       Price: 0, */
 			address: '',
 		};
+
 
 		this.handleEventchange = this.handleEventchange.bind(this);
 		this.handleClick = this.handleClick.bind(this);
@@ -51,7 +54,7 @@ class HomePage extends React.Component {
 	render() {
 		return (
 			<>
-				<h3>Welcome to Cozy hysas!</h3>
+				<h3 className="Title">Welcome to Cozy hysas!</h3>
 
 				<MDBContainer>
 					<MDBInput
