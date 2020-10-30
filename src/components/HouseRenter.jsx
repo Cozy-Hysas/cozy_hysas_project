@@ -39,7 +39,7 @@ class HouseRenter extends React.Component {
 			<div>
 				<div className="add">
 					<div className="add-house">
-						<h3 className="Title">Enter information for the House to rent</h3>
+						<h3 className="Title">Information about the House</h3>
 						<form onSubmit={this.handleEventOnClick}>
 							<MDBContainer>
 								Title to the house <br></br>
