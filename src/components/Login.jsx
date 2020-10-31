@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Signup from "./Signup.jsx";
-import HouseRenter from "./HouseRenter.jsx";
+import House from "./House.jsx";
+import { MDBContainer, MDBInput } from 'mdbreact';
 class Login extends Component {
 
 	constructor(props) {
@@ -43,23 +44,39 @@ class Login extends Component {
 							onSubmit={(event) => this.check(event)}
 						>
 							<div>
-								<input
-									type="email"
-									placeholder="put your email here"
+							<MDBContainer>
+							Email <br></br>
+								<MDBInput
+								    type="email"
+									className="email"
+									label="Please enter your E-mail "
+									name="Email"
+									outline
+									size="lg"
+									required
 									value={this.state.email}
 									onChange={this.changeEmail}
-									required
+									
 								/>
-								<br></br>
-								<input
+                               
+                                Password <br></br>
+								<MDBInput
 									type="password"
-									placeholder="put your password here "
-									value={this.state.password}
+									label="Please enter your Passeword "
+									name="password"
+									outline
+									size="lg"
+								    minLength="6"
+								    value={this.state.password}
 									onChange={this.changePassword}
 									required
+									
 								/>
-								<br></br>
-								<input type="submit" value="login" />
+									<br></br>
+								<button className="btn btn-outline-secondary">
+									LogIn
+								</button>
+							</MDBContainer>
 							</div>
 						</form>
 					</div>
