@@ -70,6 +70,4 @@ class Purchase extends React.Component {
 		;
 	}
 }
-
 export default Purchase;
-
