@@ -35,7 +35,6 @@ router.post("/signup", async (req, res) => {
 
 router.post('/login', async (req, res) => {
     //Validation register
-    console.log(req.body);
     const { error } = loginValidationUsers(req.body)
     if (error) return res.send(error.details[0].message)
     //Cheking email 
