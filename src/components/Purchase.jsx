@@ -42,7 +42,7 @@ class Purchase extends React.Component {
 						<h2 className='Title2'>Check</h2>
 						<h4 className="subtitlet">
 							{' '}
-							price per day : <span>{this.props.price}</span>
+							price per day : <span>{this.props.price}</span> DT
 						</h4>
 						<br />
 						<h4 className="subtitlet">
@@ -50,7 +50,7 @@ class Purchase extends React.Component {
 						</h4>
 						<br />
 						<h4 className="subtitlet">
-							Total Price : <span>{this.props.totalPrice}</span>
+							Total Price : <span>{this.props.totalPrice}</span>DT
 						</h4>
 						<br />
 						<button className="btn btn-outline-secondary" onClick={this.onClick.bind(this)}>
