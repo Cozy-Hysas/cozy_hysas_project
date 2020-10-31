@@ -14,6 +14,7 @@ const initialState = {
 		price: 0,
 		startDate: null,
 		endDate: null,
+		feedBack: [],
 	},
 	listOfHouses: [],
 };

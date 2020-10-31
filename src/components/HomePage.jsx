@@ -23,7 +23,6 @@ class HomePage extends React.Component {
 	}
 
 	handleClick() {
-		console.log('the button confirm choice works');
 		this.props.filterHouseByAddress(this.state.address);
 		this.setState({ check: 'unchecked' });
 	}
