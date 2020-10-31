@@ -28,7 +28,6 @@ class SignupTenant extends Component {
   signup(event) {
     event.preventDefault();
     axios
-
       .post("/tenants/signup", {
         name: this.state.name,
         email: this.state.email,
@@ -68,11 +67,26 @@ class SignupTenant extends Component {
 									size="lg"
 									required
 								  minLength="6"
-								  value={this.state.name}
+								  name = "name"
                   onChange={this.tenantInfoChange}
 									
 								/>
-                   Password <br></br>
+                  
+                 	Email <br></br>
+								<MDBInput
+                  className="email"
+                  type="email"
+									label="Please enter your E-mail "
+									name="email"
+									outline
+									size="lg"
+									required
+                  onChange={this.tenantInfoChange}
+                  required
+									
+								/>
+                
+                 Password <br></br>
 								<MDBInput
 									type="password"
 									label="Please enter your Passeword "
@@ -80,36 +94,19 @@ class SignupTenant extends Component {
 									outline
 									size="lg"
 									required
-                  value={this.state.password}
                   onChange={this.tenantInfoChange}
                   minLength="6"
                   required
 									
 								/>
-                 	Email <br></br>
-								<MDBInput
-                  className="email"
-                  type="email"
-									label="Please enter your E-mail "
-									name="Email"
-									outline
-									size="lg"
-									required
-                  value={this.state.email}
-                  onChange={this.tenantInfoChange}
-                  required
-									
-								/>
-                 
                  Phone number<br></br>
 								<MDBInput
-									type="number"
+									type="text"
 									label="Please enter your phone number "
 									outline
 									name="phoneNumber"
 									size="lg"
 									required
-                  value={this.state.phoneNumber}
                   onChange={this.tenantInfoChange}
                   minLength="8"
 									
@@ -124,32 +121,29 @@ class SignupTenant extends Component {
 									required
 									name="address"
 								  minLength="10"
-								  value={this.state.address}
                   onChange={this.tenantInfoChange}
 									
 								/>
                   credit Card number<br></br>
 								<MDBInput
-									type="number"
+									type="text"
 									label="Please enter your credit card number "
 									outline
                   name="numeroCart"
 									size="lg"
 									required
-                  value={this.state.phoneNumber}
                   onChange={this.tenantInfoChange}
                   minLength="8"
 									
 								/>
                   CVV2 <br></br>
 								<MDBInput
-									type="number"
+									type="text"
 									label="Please enter your CVV2 number "
 									outline
                   name="cvv2"
 									size="lg"
 									required
-                  value={this.state.phoneNumber}
                   onChange={this.tenantInfoChange}
                   minLength="3"
                   maxLength="3"
