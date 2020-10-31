@@ -35,6 +35,6 @@ const houseSchema = new mongoose.Schema(
 const House = mongoose.model('House', houseSchema);
 /* House.remove({}, () => {
 	console.log('all elements deleted');
-}); */
-//House.create(mock_data);
+});
+House.create(mock_data); */
 module.exports = House;
