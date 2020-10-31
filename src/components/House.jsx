@@ -3,7 +3,6 @@ import Purchase from './Purchase.jsx';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 class Houses extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -128,7 +127,7 @@ class Houses extends React.Component {
 							startDate={this.state.startDate}
 							endDate={this.state.endDate}
 							totalDays={this.state.totalDays}
-							price={this.state.price}
+							price={this.props.house.price}
 							totalPrice={this.state.totalPrice}
 						/>
 					</center>
@@ -136,7 +135,6 @@ class Houses extends React.Component {
 			);
 		}
 	}
-
 }
 
 Houses.propTypes = {

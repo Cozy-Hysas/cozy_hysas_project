@@ -13,23 +13,19 @@ class Login extends Component {
         this.check = this.check.bind(this);
         this.changePassword = this.changePassword.bind(this);
         this.changeEmail = this.changeEmail.bind(this);
-
     }
-    
     changePassword(event) {
         this.setState({ password: event.target.value})
     }
     changeEmail(event) {
         this.setState({ email: event.target.value})
     }
-  
         check(event) {
           event.preventDefault();
           axios.post("http://localhost:3000/users/login",{email: this.state.email,password: this.state.password})
           .then((res)=> this.setState({check : res.data.message}))
           .catch((err)=> console.log(err,'errrrr'));
         }
-
     render() {
         if (this.state.check === "") {
             return (
@@ -78,6 +74,4 @@ class Login extends Component {
           }
         }
 }
-
 export default Login;
-
