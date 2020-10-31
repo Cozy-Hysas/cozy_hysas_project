@@ -16,6 +16,8 @@ class LoginTenant extends Component {
         this.changeEmail = this.changeEmail.bind(this);
         this.check = this.check.bind(this);
     }
+    
+
     changePassword(event) {
         this.setState({ password: event.target.value})
     }
@@ -24,7 +26,7 @@ class LoginTenant extends Component {
     }
     check(event) {
         event.preventDefault();
-        axios.post("/tenants/login",{email: this.state.email,password: this.state.password})
+        axios.post("http://localhost:3000/tenants/login",{email: this.state.email,password: this.state.password})
         .then((res)=> this.setState({check : res.data.message}))
         .catch((err)=> console.log(err,'errrrr'));
       }
@@ -93,4 +95,5 @@ class LoginTenant extends Component {
           }
         }
 }
+
 export default LoginTenant;
