@@ -1,8 +1,10 @@
-#HomePage {
+body {
 	background-image: url('https://image.freepik.com/free-photo/interior-has-armchair-empty-white-wall_41470-1722.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
+	background-position: center, fixed;
+	margin: 0;
+	padding: 0;
 	height: auto;
 	width: auto;
 	overflow-y: auto;
@@ -85,3 +87,7 @@
 	font-weight: bolder;
 }
 
+.btn btn-outline-secondary{
+	text-align: right;
+	border: 2px solid #90b3b9!important;
+}
