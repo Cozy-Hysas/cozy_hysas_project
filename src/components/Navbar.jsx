@@ -12,14 +12,18 @@ class NavBar extends Component {
           <div>
             <nav>
               <ul>
+              <Link to="/"> 
               <img 
               
 							src="https://cdn1.vectorstock.com/i/1000x1000/89/70/house-with-heart-blue-line-icon-love-home-vector-23308970.jpg" 
 							width="50"
 							height="50"
 							className="d-inline-block align-top"
-							alt=""
+              alt=""
+              to="/"
 						/>
+             </Link>
+              
             <div className="d-inline-block align-top">
             <li style={{float: "left"}} >
                   <Link to="/"> Home Page </Link>
