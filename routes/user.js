@@ -35,15 +35,16 @@ router.post("/signup", async (req, res) => {
 
 router.post('/login', async (req, res) => {
     //Validation register
+    console.log(req.body);
     const { error } = loginValidationUsers(req.body)
     if (error) return res.send(error.details[0].message)
     //Cheking email 
     const user = await User.findOne({ email: req.body.email })
-    if (!user) return res.status(400).send('Email is not found ')
+    if (!user) return res.json({"message" : "signup"})
     //Hash password 
     const validPassword = await bcrypt.compare(req.body.password, user.password)
-    if (!validPassword) return res.status(400).send('Invalid password')
-    const obj = {"message" : "welcome"}
+    if (!validPassword) return res.json({"message" : "signup"})
+   const obj = {"message" : "welcome"}
     res.json(obj);
 })
 
