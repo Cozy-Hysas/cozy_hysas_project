@@ -16,6 +16,19 @@ body {
 	margin-left: 500px;
 	color: #372f44;
 }
+.Title2 {
+	font-size: 1em;
+	margin-top:50px;
+	margin-right:10px ;
+	margin-left: 500px;
+	color: #372f44;
+}
+.subtitle {
+	margin-right:10px ;
+	margin-left: 30px;
+	color: #372f44;
+
+}
 
 .houses-list-item {
 	min-height: 350px;
@@ -91,3 +104,30 @@ body {
 	text-align: right;
 	border: 2px solid #90b3b9!important;
 }
+.d-inline-block align-top{
+	float: left;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+  }
+  
+  li {
+	float: right;
+  }
+  
+  li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
+  
+  li a:hover {
+	background-color: #111;
+  }
