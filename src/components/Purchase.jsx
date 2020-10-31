@@ -48,4 +48,4 @@ class Purchase extends React.Component {
         </div>
     }
 }
-export default Purshas;
+export default Purchase;
