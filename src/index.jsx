@@ -32,7 +32,7 @@ class Index extends React.Component {
           {/* <LoginTenant/> */}
           {/* <SignupTenant/> */}
           {/* <House/> */}
-          <Footer />
+        
         </div>
       </Provider>
     );

@@ -50,10 +50,10 @@ router.post('/login', async (req, res) => {
     if (error) return res.send(error.details[0].message)
     //Cheking email 
     const tenant = await Tenant.findOne({ email: req.body.email })
-    if (!tenant) return res.status(400).send('Email is not found ')
+    if (!tenant) return res.json({"message" : "signup"})
     //Hash password 
     const validPassword = await bcrypt.compare(req.body.password, tenant.password)
-    if (!validPassword) return res.status(400).send('Invalid password')
+    if (!validPassword) return res.json({"message" : "signup"})
     const obj = {"message" : "welcome"}
     res.json(obj);
 })
