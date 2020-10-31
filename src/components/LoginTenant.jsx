@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SignupTenant from './SignupTenant.jsx';
-import House from './House.jsx';
 import { MDBContainer, MDBInput } from 'mdbreact';
+import HomePage from './HomePage.jsx'
+
 class LoginTenant extends Component {
     constructor(props) {
         super(props);
@@ -85,7 +86,7 @@ class LoginTenant extends Component {
             return (
               <center>
                 <div>
-                  <House/>
+                  <HomePage/>
                 </div>
               </center>
             );

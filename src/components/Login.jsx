@@ -94,7 +94,7 @@ class Login extends Component {
 			return (
 				<center>
 					<div>
-						<House />
+						<HouseRenter/> 
 					</div>
 				</center>
 			);
