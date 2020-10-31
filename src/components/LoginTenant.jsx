@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SignupTenant from './SignupTenant.jsx';
+import { MDBContainer, MDBInput } from 'mdbreact';
 import HomePage from './HomePage.jsx'
+
 class LoginTenant extends Component {
     constructor(props) {
         super(props);
@@ -33,23 +35,40 @@ class LoginTenant extends Component {
                 <div className="login">
                   <form className="login-form" onSubmit={(event) => this.check(event)}>
                   <div>
-                    <input
-                      type="email"
-                      placeholder="put your email here"
-                      value={this.state.email}
-                      onChange={this.changeEmail}
-                      required
-                    />
-                    <br></br>
-                    <input
-                      type="password"
-                      placeholder="put your password here "
-                      value={this.state.password}
-                      onChange={this.changePassword}
-                      required
-                    />
-                    <br></br>
-                    <input type="submit" value = "LOGIN"/>
+                    	<MDBContainer>
+							Email <br></br>
+								<MDBInput
+								    type="email"
+									className="email"
+									label="Please enter your E-mail "
+									name="Email"
+									outline
+									size="lg"
+									required
+									value={this.state.email}
+									onChange={this.changeEmail}
+									
+								/>
+                               
+                                Password <br></br>
+								<MDBInput
+									type="password"
+									label="Please enter your Passeword "
+									name="password"
+									outline
+									size="lg"
+								    minLength="6"
+								    value={this.state.password}
+									onChange={this.changePassword}
+									required
+									
+								/>
+									<br></br>
+								<button className="btn btn-outline-secondary">
+									LogIn
+								</button>
+							</MDBContainer>
+                    
                   </div>
                   </form>
                 </div>
