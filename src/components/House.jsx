@@ -69,7 +69,7 @@ class Houses extends React.Component {
 							<br />
 							<br />
 							<span className="house-byline-price">
-								price per day : {this.props.house.price}
+								price per day : {this.props.house.price} DT
 							</span>
 							<br />
 							<br />

@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar.jsx";
 // import HouseRenter from './components/HouseRenter.jsx';
 // import Login from './components/Login.jsx';
 // import Signup from './components/Signup.jsx';
-import Footer from "./components/Footer.jsx";
+//import Footer from "./components/Footer.jsx";
 // import HousesList from './components/HousesList.jsx';
 import { Provider } from "react-redux";
 import { store } from "./redux/Store.js";

@@ -25,35 +25,43 @@ class Purchase extends React.Component {
 		if (this.state.toHomePage === '') {
 			return (
 				<div>
-					<h1>Confirm your reservation</h1>
-					<h4>
-						{' '}
-						Your first day is : <span>{this.props.startDate}</span>
-					</h4>
-					<br />
-					<h4>
-						{' '}
-						Your last day is : <span>{this.props.endDate}</span>
-					</h4>
-					<br />
-					<br />
-					<div>
-						<h2>Check</h2>
-						<h4>
+					<center>
+						<h1 className="Title">Confirm your reservation</h1>
+
+						<h4 className="subtitlet">
 							{' '}
-							price per day : <span>{this.props.price}</span>
+							Your first day is : <span>{this.props.startDate}</span>
 						</h4>
 						<br />
-						<h4>
-							Days : <span>{this.props.totalDays}</span>
+						<h4 className="subtitlet">
+							{' '}
+							Your last day is : <span>{this.props.endDate}</span>
 						</h4>
 						<br />
-						<h4>
-							Total Price : <span>{this.props.totalPrice}</span>
-						</h4>
 						<br />
-						<button onClick={this.onClick.bind(this)}>Confirm</button>
-					</div>
+						<div>
+							<h2 className="Title2">Check</h2>
+							<h4 className="subtitlet">
+								{' '}
+								price per day : <span>{this.props.price} DT</span>
+							</h4>
+							<br />
+							<h4 className="subtitlet">
+								Days : <span>{this.props.totalDays}</span>
+							</h4>
+							<br />
+							<h4 className="subtitlet">
+								Total Price : <span>{this.props.totalPrice} DT</span>
+							</h4>
+							<br />
+							<button
+								className="btn btn-outline-secondary"
+								onClick={this.onClick.bind(this)}
+							>
+								Confirm
+							</button>
+						</div>
+					</center>
 				</div>
 			);
 		} else if (this.state.toHomePage === 'homepage') {
@@ -63,9 +71,6 @@ class Purchase extends React.Component {
 				</div>
 			);
 		}
-		<div></div>;
 	}
 }
-
 export default Purchase;
-
