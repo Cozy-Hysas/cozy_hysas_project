@@ -8,7 +8,7 @@
 		"price": 80 ,
 		"startDate": "7/9/2020",
 		"endDate": "1/18/2020",
-		"feedBack": []
+		"feedBack": ["Nice stay in a brand new and clean appartmeny. The host is very friendly. With some extra furntiure for cleaning and cooking, the appartment would be superb"]
 	},
 	{
 		"id": 2,
@@ -19,7 +19,7 @@
 		"price": 60 ,
 		"startDate": "4/3/2020",
 		"endDate": "4/8/2020",
-		"feedBack": []
+		"feedBack": ["Nice place! I totally recommended."]
 	},
 	{
 		"id": 3,
@@ -63,7 +63,7 @@
 		"price": 80 ,
 		"startDate": "2/23/2020",
 		"endDate": "4/29/2020",
-		"feedBack": []
+		"feedBack": ["Nice place in a very nice location. Love it"]
 	},
 	{
 		"id": 7,
@@ -74,7 +74,7 @@
 		"price": 50 ,
 		"startDate": "7/31/2020",
 		"endDate": "1/30/2020",
-		"feedBack": []
+		"feedBack": ["Place is super nice and clean very convenient to all restaurants shops and grocery stores We spent a fantastic time 5 stars"]
 	},
 	{
 		"id": 8,
@@ -85,7 +85,7 @@
 		"price": 150 ,
 		"startDate": "7/27/2020",
 		"endDate": "8/21/2020",
-		"feedBack": []
+		"feedBack": ["The room here is very clean and the host is very nice. It will always be helpful to you. The location of the room is also very good, very beautiful, just like the photos. In the room you will see the beautiful sea, and if I come to Tunisia next time, I will definitely stay here."]
 	},
 	{
 		"id": 9,
@@ -96,7 +96,7 @@
 		"price": "40",
 		"startDate": "2/27/2020",
 		"endDate": "8/7/2020",
-		"feedBack": []
+		"feedBack": ["Very nice host near and very nice place to stay in. It is close to Tunis airport and to many shops, cafes and restaurants"]
 	},
 	{
 		"id": 10,
@@ -107,6 +107,6 @@
 		"price": 50 ,
 		"startDate": "6/11/2020",
 		"endDate": "12/9/2019",
-		"feedBack": []
+		"feedBack": ["Honestly it was lot better than what I expected. It was close to everything and restaurants are less than a minute away. I had my privacy. It was 10mins walk to the medina, and close to the metro too. I stayed for 12days so the washing machine was very useful. Fully working stove, I cooked at home sometimes. Checkin and checkout was hassle free, even though I spoke no Arabic or French. One day I locked myself out and Mohamed was very kind to come to open the door for me. He is a proper gentleman. I will definitely recommend his place, and I will stay again" ,"great location! thanks again"]
 	}
 ]
