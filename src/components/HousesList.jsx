@@ -16,9 +16,6 @@ class HousesList extends React.Component {
 		this.props.selectHouseById(id);
 		this.setState({ check: 'unchecked' });
 	}
-	componentDidMount() {
-		this.props.fetchHouses();
-	}
 
 	render() {
 		if (this.state.check === '') {
@@ -37,7 +34,7 @@ class HousesList extends React.Component {
 									<div className="houses-list-item-byline">
 										The price per day is :
 										<span className="houses-list-item-byline-price">
-											{house.price}
+											{house.price} DT
 										</span>
 									</div>
 									<img
