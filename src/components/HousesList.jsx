@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectHouseById } from '../redux/actions/houseAction';
+import { selectHouseById, fetchHouses } from '../redux/actions/houseAction';
 import PropTypes from 'prop-types';
 import House from './House.jsx';
 
@@ -14,13 +14,14 @@ class HousesList extends React.Component {
 
 	handleClick(id) {
 		this.props.selectHouseById(id);
+		this.setState({ check: 'unchecked' });
 	}
 	componentDidMount() {
 		this.props.fetchHouses();
 	}
 
 	render() {
-		if ((this.state.check = '')) {
+		if (this.state.check === '') {
 			return (
 				<div>
 					<ul>
@@ -65,11 +66,15 @@ class HousesList extends React.Component {
 
 HousesList.propTypes = {
 	selectHouseById: PropTypes.func.isRequired,
+	fetchHouses: PropTypes.func.isRequired,
 	listOfHouses: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
 	selectHouseById: PropTypes.func.isRequired,
+	fetchHouses: PropTypes.func.isRequired,
 	listOfHouses: state.house.listOfHouses,
 });
-export default connect(mapStateToProps, { selectHouseById })(HousesList);
+export default connect(mapStateToProps, { selectHouseById, fetchHouses })(
+	HousesList
+);
