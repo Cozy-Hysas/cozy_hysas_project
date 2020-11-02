@@ -16,36 +16,36 @@ class HousesList extends React.Component {
 		this.props.selectHouseById(id);
 		this.setState({ check: 'unchecked' });
 	}
-	componentDidMount() {
-		this.props.fetchHouses();
-	}
 
 	render() {
 		if (this.state.check === '') {
 			return (
-				<div>
+				<div className="houses">
 					<ul>
 						{this.props.listOfHouses.map((house, i) => {
 							return (
-								<li>
-									<div key={house._id}>
-										<h1
-											className="houseTitle"
-											onClick={(event) => this.handleClick(house._id)}
-										>
-											{house.title}
-										</h1>
-										<img
-											src={house.imageUrl}
-											alt=""
-											onClick={(event) => this.handleClick(house._id)}
-											className="houseimage"
-										/>
-										<span className="description">{house.description} </span>
-										<div className="price">
-											<span className="housePrice">{house.price} </span>{' '}
-										</div>
+								<li className="houses-list-item" key={house._id}>
+									<div
+										className="houses-list-item-title"
+										onClick={(event) => this.handleClick(house._id)}
+									>
+										{house.title}
 									</div>
+									<div className="houses-list-item-byline">
+										The price per day is :
+										<span className="houses-list-item-byline-price">
+											{house.price} DT
+										</span>
+									</div>
+									<img
+										src={house.imageUrl}
+										alt=""
+										onClick={(event) => this.handleClick(house._id)}
+										className="houses-list-item-image"
+									/>
+									<span className="houses-list-item-lede">
+										{house.description.slice(0, 280)}{' '}
+									</span>
 								</li>
 							);
 						})}

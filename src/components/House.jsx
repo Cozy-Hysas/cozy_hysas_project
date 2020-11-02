@@ -7,13 +7,7 @@ class Houses extends React.Component {
 		super(props);
 		this.state = {
 			feedBack: ['the service was good', 'Beautiful views'],
-			/* title: 'vilaa',
-			description: 'good one',
-			price: '200',
-			imageUrl:
-				'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&w=1000&q=80',
-			*/ startDate:
-				'',
+			startDate: '',
 			endDate: '',
 			totalDays: 0,
 			totalPrice: 0,
@@ -75,14 +69,14 @@ class Houses extends React.Component {
 							<br />
 							<br />
 							<span className="house-byline-price">
-								price per day : {this.props.house.price}
+								price per day : {this.props.house.price} DT
 							</span>
 							<br />
 							<br />
 							feedback :
-							{this.state.feedBack.map((feedback, i) => (
+							{this.props.house.feedBack.map((feedback, i) => (
 								<div key={i}>
-									<span>* {feedback}</span>
+									<span>* {feedback.text}</span>
 								</div>
 							))}{' '}
 							<br />

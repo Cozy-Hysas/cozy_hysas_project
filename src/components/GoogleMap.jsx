@@ -3,8 +3,7 @@ import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "reac
 import Geocode from "react-geocode";
 import Autocomplete from 'react-google-autocomplete';
 
-//Geocode.setApiKey(AIzaSyC8u1idfYpzwfljM5CbiaL_rVetaD6MAsU);
-//Geocode.enableDebug();
+
 
 class Map extends React.Component{
 
@@ -304,7 +303,7 @@ Geocode.fromLatLng( newLat , newLng ).then(
           
         
            <AsyncMap
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8u1idfYpzwfljM5CbiaL_rVetaD6MAsU&libraries=places"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
             loadingElement={
              <div style={{ height: `100%` }} />
             }

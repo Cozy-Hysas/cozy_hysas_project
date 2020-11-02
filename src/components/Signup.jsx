@@ -57,6 +57,7 @@ class Signup extends Component {
 								<MDBInput
 									className="input"
 									label="Please enter your name "
+									name = "name"
 									outline
 									size="lg"
 									required
@@ -70,7 +71,7 @@ class Signup extends Component {
 								<MDBInput
 									className="email"
 									label="Please enter your E-mail "
-									name="Email"
+									name="email"
 									outline
 									size="lg"
 									required
